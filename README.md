@@ -41,3 +41,34 @@ depend on its current split and preprocessing; they are not an independently
 validated benchmark. Review preprocessing and evaluation before making model
 quality claims. SHAP and Kaleido are optional and are not required for the basic
 dashboard. Only load serialized model files from sources you trust.
+
+## Dashboard preview
+
+![Titanic dashboard using the committed passenger dataset](docs/images/dashboard.png)
+
+Actual local dashboard screenshot using the repository's `titanic/train.csv`.
+
+## Reproduce a held-out baseline
+
+```bash
+python evaluate.py
+```
+
+The script splits the raw data **before fitting preprocessing**, then trains a
+Random Forest on 712 records and evaluates on 179 held-out records using a
+stratified 80/20 split with `random_state=42`.
+
+| Metric | Result |
+| --- | ---: |
+| Accuracy | 81.01% |
+| F1 score | 0.7167 |
+| ROC AUC | 0.8358 |
+| Majority-class baseline accuracy | 61.45% |
+
+![Held-out confusion matrix](docs/results/confusion_matrix.png)
+
+Raw outputs: [metrics JSON](docs/results/metrics.json) and
+[confusion matrix CSV](docs/results/confusion_matrix.csv). The JSON records the
+source dataset SHA-256 and scikit-learn version. This is a separate reproducible
+baseline, not an evaluation of the dashboard's cached model, a Kaggle score,
+K-fold validation or a production-performance claim.

@@ -154,7 +154,6 @@ def load_data(path):
         }
         return pd.DataFrame(sample_data)
 
-@st.cache_data
 def preprocess(df):
     """Enhanced preprocessing with additional features"""
     data = df.copy()
@@ -227,7 +226,6 @@ def preprocess(df):
 
     return data
 
-@st.cache_data
 def prepare_model_data(df):
     """Enhanced feature preparation for ML - FIXED categorical handling"""
     data = df.copy()

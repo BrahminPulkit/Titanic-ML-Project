@@ -1,0 +1,32 @@
+{
+  "dataset_sha256": "7d118fef8b6ccf7f81111877bc388536f7b1e498a655e3d649d19aaa010e9f6f",
+  "rows": 891,
+  "training_rows": 712,
+  "test_rows": 179,
+  "split": "stratified 80/20, random_state=42",
+  "features": [
+    "Pclass",
+    "Age",
+    "SibSp",
+    "Parch",
+    "Fare",
+    "Sex",
+    "Embarked"
+  ],
+  "sklearn_version": "1.9.1",
+  "accuracy": 0.810056,
+  "f1": 0.716667,
+  "roc_auc": 0.835837,
+  "majority_baseline_accuracy": 0.614525,
+  "confusion_matrix": [
+    [
+      102,
+      8
+    ],
+    [
+      26,
+      43
+    ]
+  ],
+  "limitations": "One held-out split; educational baseline, not a competition score or externally validated model. Separate from the dashboard cached model."
+}

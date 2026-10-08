@@ -1,8 +1,8 @@
-streamlit
-pandas
-numpy
-plotly
-matplotlib
-scikit-learn
-fpdf2
-joblib
+streamlit==1.65.0
+pandas==3.0.3
+numpy==2.2.6
+plotly==6.8.0
+matplotlib==3.11.2
+scikit-learn==1.9.1
+fpdf2==2.8.9
+joblib==1.6.0
